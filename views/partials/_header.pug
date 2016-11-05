@@ -1,0 +1,13 @@
+nav.navbar.navbar-fixed-top
+
+  .content-padding
+    ul.nav.navbar-right.navbar-nav
+      li
+        a(href="/") Home
+      li.dropdown
+        a(href="#" data-toggle="dropdown").dropdown-toggle Movies
+          i.fa.fa-chevron-down
+        ul.dropdown-menu
+          -for(var i = 0; i < movies.length; i++)
+            li
+              a.episode_link(href="#")= movies[i].title
