@@ -21,11 +21,8 @@ app.get('/movie-episode/:movie_number?', routes.movieSingle);
 app.get('*', routes.notFound);
 
 //Server
-// app.set('port', process.env.PORT || 3000) ;
-// var server = app.listen(app.get('port'), function(){
-//     console.log('Express server listening on port ' + server.address().port);
-// });
-var port = process.env.PORT || 8000
-server.listen(port, function() {
-    console.log("App is running on port " + port);
+app.set('port', process.env.PORT || 3000) ;
+var server = app.listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + server.address().port);
 });
+
