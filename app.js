@@ -25,7 +25,7 @@ app.get('*', routes.notFound);
 // var server = app.listen(app.get('port'), function(){
 //     console.log('Express server listening on port ' + server.address().port);
 // });
-
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+var port = process.env.PORT || 8000
+server.listen(port, function() {
+    console.log("App is running on port " + port);
 });
