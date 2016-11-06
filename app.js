@@ -15,7 +15,7 @@ var routes = require('./routes');
 app.get('/', routes.home);
 
 //Single cinema page
-app.get('/movie-single/:movie_number?', routes.movieSingle);
+app.get('/movie-episode/:movie_number?', routes.movieSingle);
 
 //Not Found page
 app.get('*', routes.notFound);

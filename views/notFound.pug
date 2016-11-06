@@ -11,18 +11,8 @@ block style
 block header
   include partials/_header.pug
 block content
-  #hero-image
+  #hero-image-notFound
     h1#hero-title= title
-
-  #posters-wrapper.content-padding.clearfix
-    -for(var i = 0; i < movies.length; i++)
-      .poster
-        a(href="/movie-episode/" + movies[i].episode_number)
-          img(src='/images/' + movies[i].poster).img-responsive
-          .poster-info-overlay
-            h3= movies[i].title
-            h4 View More
-              i.fa.fa-arrow-right
 
 block footer
   include partials/_footer

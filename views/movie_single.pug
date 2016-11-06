@@ -11,18 +11,26 @@ block style
 block header
   include partials/_header.pug
 block content
-  #hero-image
+  #hero-image-single(style=`background-image: url(/images/${movie.hero_image})`)
     h1#hero-title= title
 
-  #posters-wrapper.content-padding.clearfix
-    -for(var i = 0; i < movies.length; i++)
-      .poster
-        a(href="/movie-episode/" + movies[i].episode_number)
-          img(src='/images/' + movies[i].poster).img-responsive
-          .poster-info-overlay
-            h3= movies[i].title
-            h4 View More
-              i.fa.fa-arrow-right
+  .content-padding.clearfix
+    .poster-wrapper
+      img(src="/images/" + movie.poster).img-responsive
+
+    .description-wrapper
+      .description
+        h2.movie-header Description
+        p.movie-description= movie.description
+
+      .main-characters
+        h2.movie-header Main Characters
+        ul
+          -for(var i = 0; i < main_characters.length; i++)
+            li= main_characters[i]
+
+
+
 
 block footer
   include partials/_footer
